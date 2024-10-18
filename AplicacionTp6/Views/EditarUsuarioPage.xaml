@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AplicacionTp6.ViewModels"
+             x:Class="AplicacionTp6.Views.EditarUsuarioPage"
+             Title="Editar Usuario"
+             BackgroundColor="#bdd1de">
+
+    
+    <VerticalStackLayout Padding="20">
+
+        
+        <Image Source="cargando.gif"
+               IsVisible="{Binding IsBusy}" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               HeightRequest="100"
+               WidthRequest="100"/>
+
+        
+        <Frame BackgroundColor="#84abaa" CornerRadius="15" Padding="15" Margin="0,10,0,10" HasShadow="True">
+            <VerticalStackLayout>
+                <Label Text="Editando la informacíon Usuario" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" TextColor="#00796B" />
+
+               
+                <Entry Placeholder="Nombre del Usuario" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding Usuario.Nombre}" 
+                       Margin="0,5" />
+
+                <Entry Placeholder="Correo Electrónico" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding Usuario.Correo}" 
+                       Margin="0,5" />
+
+                <Entry Placeholder="Contraseña" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding Usuario.Contrasena}" 
+                       IsPassword="True" 
+                       Margin="0,5" />
+
+                
+                <Entry Placeholder="Apellido" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding Usuario.Apellido}" 
+                       Margin="0,5" />
+
+                <Entry Placeholder="Nombre" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding Usuario.Rol}" 
+                       Margin="0,5" />
+
+               
+                <Button Text="Editar Usuario"
+                        Command="{Binding EditarUsuarioCommand}" 
+                        BackgroundColor="#00796B"
+                        TextColor="White"
+                        Margin="0,15,0,0"
+                        CornerRadius="10"
+                        FontSize="Medium"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
